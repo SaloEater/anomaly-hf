@@ -169,7 +169,8 @@ function base_binder:net_spawn(se_abstract)
     end
 
     if self.wrapper and self.wrapper.net_spawn then
-        return self.wrapper:net_spawn(se_abstract)
+        local result = self.wrapper:net_spawn(se_abstract)
+        if result == false then return false end
     end
 
     return true
