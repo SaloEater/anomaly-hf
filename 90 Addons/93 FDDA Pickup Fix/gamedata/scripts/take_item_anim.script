@@ -31,7 +31,6 @@ end
 local anim_plays = nil
 local anm_name = "camera_effects\\weapon\\two_handed_weapon_effect.anm"
 function start_pickup_delay(item)
-	if (not enable_take) or (not enable_animations) then return end --1 - 10 single press, 50+ - long press
 	if not anim_plays and not enhanced_animations.used_item then
 		game.play_hud_motion(db.actor:active_slot()==0 and 2 or 1, "item_ea_take_hud", "anm_ea_take", true, 1.4)
 		game.play_hud_anm(anm_name, 0, 1.4, 1, false)
@@ -51,8 +50,9 @@ function bind_stalker_ext.actor_on_item_before_pickup(item)
 	local is_pickupable = is_item_pickupable(item)
 	if not is_pickupable then return false end -- respect pickupability as set by callback
 
+	if (not enable_take) or (not enable_animations) then return true end --1 - 10 single press, 50+ - long press
 	start_pickup_delay(item)
-	return true
+	return false
 end
 
 function anim_delay()
