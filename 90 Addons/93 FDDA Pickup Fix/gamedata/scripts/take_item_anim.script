@@ -34,7 +34,7 @@ function start_pickup_delay(item)
 	if not anim_plays and not enhanced_animations.used_item then
 		game.play_hud_motion(db.actor:active_slot()==0 and 2 or 1, "item_ea_take_hud", "anm_ea_take", true, 1.4)
 		game.play_hud_anm(anm_name, 0, 1.4, 1, false)
-		CreateTimeEvent("ea_item_take","take_delay",0.65,take_delay,item)
+		CreateTimeEvent("ea_item_take","take_delay",0.65,take_delay,item:id())
 		CreateTimeEvent("ea_item_take","anim_delay",1.33,anim_delay)
 		anim_plays = true
 	end
@@ -60,7 +60,10 @@ function anim_delay()
 	return true
 end
 
-function take_delay(obj_o)
+function take_delay(object_id)
+	local obj_o = level.object_by_id(object_id)
+	if not obj_o then return true end
+
 	local actor = db.actor
 	actor:take_item(obj_o)
 	if enable_multipickup then
