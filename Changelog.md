@@ -1,5 +1,15 @@
+# 2.3.2
+# Bug Fixes
+- Allow binders that return `nil` to still spawn (Thanks Khyber!)
+  - Should let Water Pumps from Fillable Canteens and Washbasins from Even More Hideout Furniture spawn
+- Re-add delayed pickup with FDDA pickup animation
+- Fix source of busy hands due to FDDA pickup (Thanks Rambito!)
+  - Was present in original script, caused due to picked up item being released during animation (probably)
+- Move `AddScriptCallback` calls into script body (Thanks NLTP_ASHES!)
+  - Should allow scripts to register them in their own `on_game_start` function
+
 # 2.3.1
-## Bug Fix
+## Bug Fixes
 - Fix bounding boxes of weapon racks (Thanks Rambito!)
   - Should be able to place them with collision enabled
 - Fix pickup with FDDA enabled, but without the pickup anim (Thanks GDI_Amiya!)
