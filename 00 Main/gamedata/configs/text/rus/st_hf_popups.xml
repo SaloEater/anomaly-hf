@@ -16,10 +16,10 @@
 		<text>Я не в состоянии это поднять.</text>
 	</string>
 	<string id="st_enable_collision">
-		<text>Включено Столкновение</text>
+		<text>Проверка столкновений включена</text>
 	</string>
 	<string id="st_disable_collision">
-		<text>Столкновение с инвалидом</text>
+		<text>Проверка столкновений выключена</text>
 	</string>
 	<string id="st_align_actor">
 		<text>Выравнивание относительно игрока</text>
