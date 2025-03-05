@@ -7,7 +7,7 @@
 		<text>Разместить ($$ACTION_USE$$)</text>
 	</string>
 	<string id="st_far_popup">
-		<text>Невозможно разместить объект на таком расстоянии - максимальная дальность 5 единиц</text>
+		<text>Это слишком далеко для меня.</text>
 	</string>
 	<string id="st_collision_warning">
 		<text>Невозможно поместить объект - он сталкивается с чем-то</text>
